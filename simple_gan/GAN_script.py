@@ -84,7 +84,7 @@ for epoch in range(num_epochs):
         lossD_real = criterion(disc_real, torch.ones_like(disc_real)) #label for real images is 1
         # for fake
         disc_fake = disc(fake).view(-1)
-        lossD_fake = criterion(disc_fake, torch.zeros_like(disc_fake))
+        lossD_fake = criterion(disc_fake, torch.zeros_like(disc_fake)) #label for fake images is 1
 
 
         lossD = (lossD_real + lossD_fake) / 2
